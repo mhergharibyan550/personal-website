@@ -1,11 +1,11 @@
 import AboutMe from "@/components/AboutMe";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { Button } from "@/components/ui/Button";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
-    <MaxWidthWrapper>
+    <>
       <AboutMe />
-    </MaxWidthWrapper>
+      <Experience className="mt-20" />
+    </>
   );
 }

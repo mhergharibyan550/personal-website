@@ -1,11 +1,11 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Button } from "./ui/Button";
-import { LinkedInIcon, TelegramIcon, WhatsAppIcon } from "./ui/icons.jsx";
+import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons.jsx";
 
 const AboutMe = () => {
   return (
-    <MaxWidthWrapper className="flex flex-col items-center justify-center mt-28">
+    <MaxWidthWrapper className="flex flex-col items-center justify-center mt-28 animate-fadeIn">
       <Image
         src="/Personal_Photo.png"
         alt="Personal photo"
@@ -15,11 +15,13 @@ const AboutMe = () => {
       />
       <section className="flex flex-col justify-center items-center tracking-widest py-6 w-[600px]">
         <div className="flex flex-col items-center">
-          <h1 className="text-custom-green font-bold">Greetings! 👋</h1>
-          <h2 className="text-3xl font-bold text-gray-800 my-1">
+          <h1 className="text-custom-green font-bold text-shadow-title">
+            Greetings! 👋
+          </h1>
+          <h2 className="text-3xl font-bold text-gray-800 my-1 text-shadow-title">
             I'm Mher Gharibyan
           </h2>
-          <h3 className="text-xl font-semibold text-custom-green">
+          <h3 className="text-xl font-semibold text-custom-green text-shadow-title">
             Full Stack Developer
           </h3>
         </div>
@@ -33,7 +35,7 @@ const AboutMe = () => {
           </p>
         </div>
 
-        <div className="flex gap-x-8 my-4">
+        <div className="flex flex-col gap-y-4 md:flex-row md:gap-x-8 my-4">
           <Button variant="outline" className="px-6 py-5">
             Download CV
           </Button>
@@ -46,21 +48,21 @@ const AboutMe = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LinkedInIcon width={40} height={40} />
+            <LinkedInLogo width={40} height={40} />
           </a>
           <a
             href="https://t.me/MherGharibyan"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <TelegramIcon width={40} height={40} />
+            <TelegramLogo width={40} height={40} />
           </a>
           <a
             href="https://wa.me/+37493236996"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <WhatsAppIcon width={40} height={40} />
+            <WhatsAppLogo width={40} height={40} />
           </a>
         </div>
       </section>

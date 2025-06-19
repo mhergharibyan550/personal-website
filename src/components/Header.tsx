@@ -7,11 +7,11 @@ const linkClassnames = buttonVariants({ variant: "link" });
 
 const Header = () => {
   return (
-    <header className="bg-custom-green bg-opacity-90 backdrop-blur-2xl w-full fixed top-0">
+    <header className="bg-custom-green bg-opacity-90 backdrop-blur-2xl w-full fixed top-0 z-[999]">
       <MaxWidthWrapper className="flex justify-between items-center py-3">
         <Link
-          href="#"
-          className="font-rampart text-white text-xl transition-transform hover:scale-105"
+          href="/"
+          className="font-rampart text-white text-xl transition-transform hover:scale-105 durat"
         >
           M.G.
         </Link>
@@ -19,13 +19,13 @@ const Header = () => {
           <Link className={cn(linkClassnames, "")} href="#">
             About Me
           </Link>
-          <Link className={cn(linkClassnames, "")} href="#">
+          <Link className={cn(linkClassnames, "")} href="#experience">
             Experience
           </Link>
-          <Link className={cn(linkClassnames, "")} href="#">
+          <Link className={cn(linkClassnames, "")} href="#skills">
             Skills
           </Link>
-          <Link className={cn(linkClassnames, "")} href="#">
+          <Link className={cn(linkClassnames, "")} href="#lastprojects">
             Last Projects
           </Link>
         </nav>
