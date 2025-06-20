@@ -30,10 +30,10 @@ const Experience = ({ className }: { className?: String }) => {
       role: "Full Stack Developer",
       brandColorHex: "#0428E1",
       descriptions: [
+        "Built DApp projects including logics for safe and fast crypto token swaps",
         "Effective engagement in team and productive co-working",
-        "Building logics for safe and fast crypto transactions and building DApp projects",
+        "Building commercial projects on NextJS",
         "Building connections with APIs and ensuring their error-free operations",
-        "Building commercial projects using on NextJS V14",
       ],
       link: "https://solicy.net/",
     },
@@ -44,10 +44,10 @@ const Experience = ({ className }: { className?: String }) => {
       role: "Frontend Developer",
       brandColorHex: "#792876",
       descriptions: [
-        "Building interactive and userfriendly interfaces",
-        "SEO optimization",
-        "Configuring, protecting and hosting projects on Cloudflare",
-        "Constant communication with team-leads",
+        "UI development using NextJS and ReactJS.",
+        "Configuring and hosting projects on Cloudflare",
+        "Constant communication with team-leads and members",
+        "Frontend performance optimization for fast loading times and seamless user experience.",
       ],
       link: "https://www.linkedin.com/company/digicallc/",
     },
@@ -70,14 +70,18 @@ const Experience = ({ className }: { className?: String }) => {
     <div className={cn("flex flex-col items-center", className)}>
       <h2
         id="experience"
-        className="text-3xl font-bold text-gray-800 mb-10 tracking-widest text-shadow-title"
+        className="text-3xl font-bold text-gray-800 mb-10 tracking-widest text-shadow-title scroll-mt-24"
       >
         EXPERIENCE
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">
         <MaxWidthWrapper className="flex flex-col items-center py-8">
-          {experienceInfo.map((exp) => (
-            <InfoCard key={exp.companyName} {...exp} />
+          {experienceInfo.map((exp, i) => (
+            <InfoCard
+              {...exp}
+              key={exp.companyName}
+              position={i % 2 == 0 ? "left" : "right"}
+            />
           ))}
         </MaxWidthWrapper>
       </div>
