@@ -13,7 +13,7 @@ const AboutMe = () => {
         width={180}
         className="rounded-full border-[3px] border-custom-blue"
       />
-      <section className="flex flex-col justify-center items-center tracking-widest py-6 w-[600px]">
+      <section className="flex flex-col justify-center items-center tracking-widest py-6 max-w-[600px]">
         <div className="flex flex-col items-center">
           <h1 className="text-custom-green font-bold text-shadow-title">
             Greetings! 👋
