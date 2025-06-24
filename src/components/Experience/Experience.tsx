@@ -1,14 +1,13 @@
-import { cn } from "../../lib/utils";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "../MaxWidthWrapper";
 import InfoCard, { InfoCardProps } from "./InfoCard";
 
-import solicyLogo from "@/assets/logos/solicy-logo.svg";
-import simpliLogo from "@/assets/logos/simpli-logo.jpg";
-import digicaLogo from "@/assets/logos/digica-logo.png";
-import ufreesoftLogo from "@/assets/logos/ufreesoft-logo.jpg";
+import digicaLogo from "@/assets/company_logos/digica-logo.png";
+import simpliLogo from "@/assets/company_logos/simpli-logo.jpg";
+import solicyLogo from "@/assets/company_logos/solicy-logo.svg";
+import ufreesoftLogo from "@/assets/company_logos/ufreesoft-logo.jpg";
 
-const Experience = ({ className }: { className?: String }) => {
-  const experienceInfo: Array<InfoCardProps> = [
+const Experience = () => {
+  const experienceInfo: Array<Omit<InfoCardProps, "className" | "position">> = [
     {
       src: ufreesoftLogo,
       companyName: "UFreeSoft",
@@ -67,10 +66,10 @@ const Experience = ({ className }: { className?: String }) => {
   ];
 
   return (
-    <div className={cn("flex flex-col items-center", className)}>
+    <>
       <h2
         id="experience"
-        className="text-3xl font-bold text-gray-800 mb-10 tracking-widest text-shadow-title scroll-mt-24"
+        className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
       >
         EXPERIENCE
       </h2>
@@ -85,7 +84,7 @@ const Experience = ({ className }: { className?: String }) => {
           ))}
         </MaxWidthWrapper>
       </div>
-    </div>
+    </>
   );
 };
 
