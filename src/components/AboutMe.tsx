@@ -47,6 +47,7 @@ const AboutMe = () => {
             href="https://www.linkedin.com/in/mhergharibyan550"
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn"
           >
             <LinkedInLogo width={40} height={40} />
           </a>
@@ -54,6 +55,7 @@ const AboutMe = () => {
             href="https://t.me/MherGharibyan"
             target="_blank"
             rel="noopener noreferrer"
+            title="Telegram"
           >
             <TelegramLogo width={40} height={40} />
           </a>
@@ -61,6 +63,7 @@ const AboutMe = () => {
             href="https://wa.me/+37493236996"
             target="_blank"
             rel="noopener noreferrer"
+            title="WhatsApp"
           >
             <WhatsAppLogo width={40} height={40} />
           </a>

@@ -1,11 +1,13 @@
 import AboutMe from "@/components/AboutMe";
-import Experience from "@/components/Experience";
+import Experience from "@/components/Experience/Experience";
+import Skills from "@/components/Skills/Skills";
 
 export default function Home() {
   return (
     <>
       <AboutMe />
-      <Experience className="mt-20" />
+      <Experience />
+      <Skills />
     </>
   );
 }

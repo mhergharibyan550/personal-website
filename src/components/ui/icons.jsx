@@ -71,7 +71,7 @@ const TelegramLogo = ({ width, height }) => {
 const LinkIcon = ({ width, height }) => {
   return (
     <svg
-      fill="#374151"
+      fill="currentColor"
       width={width}
       height={height}
       viewBox="0 0 50.00 50.00"
