@@ -74,7 +74,7 @@ const Experience = () => {
         EXPERIENCE
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">
-        <MaxWidthWrapper className="flex flex-col items-center py-8">
+        <MaxWidthWrapper className="flex flex-col items-center md:gap-y-10 py-8">
           {experienceInfo.map((exp, i) => (
             <InfoCard
               {...exp}

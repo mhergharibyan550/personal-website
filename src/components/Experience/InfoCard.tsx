@@ -35,7 +35,7 @@ const InfoCard = ({
       <div
         ref={ref}
         className={cn(
-          `flex flex-col items-center max-w-96 md:max-w-full md:w-full md:my-5 border rounded-md py-6 px-3 bg-white shadow-lg ease-in duration-150 hover:scale-105 ${
+          `flex flex-col items-center max-w-96 md:max-w-full md:w-full border rounded-md py-6 px-3 bg-white shadow-lg ease-in duration-150 hover:scale-105 ${
             isInView ? "animate-fadeIn" : "opacity-0"
           } ${
             position == "left"
