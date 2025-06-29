@@ -66,7 +66,7 @@ const Experience = () => {
   ];
 
   return (
-    <>
+    <section>
       <h2
         id="experience"
         className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
@@ -84,7 +84,7 @@ const Experience = () => {
           ))}
         </MaxWidthWrapper>
       </div>
-    </>
+    </section>
   );
 };
 
