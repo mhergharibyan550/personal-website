@@ -42,7 +42,7 @@ const Footer = () => {
           />
         </a>
       </div>
-      <p className="text-sm text-gray-300">Let's work together!</p>
+      <p className="text-sm text-gray-300">Let&apos;s work together!</p>
       <p className="text-xs text-gray-300">© 2025</p>
     </footer>
   );
