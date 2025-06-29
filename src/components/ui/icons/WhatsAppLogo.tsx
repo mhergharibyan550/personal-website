@@ -1,0 +1,56 @@
+"use client";
+
+import { useState } from "react";
+import { cn } from "../../../../lib/utils";
+
+const WhatsAppLogo = ({
+  className,
+  width,
+  height,
+  switchColors = true,
+  bgColorHex = "#04486d",
+}: {
+  className?: string;
+  width: number;
+  height: number;
+  switchColors?: boolean;
+  bgColorHex?: string;
+}) => {
+  const [hovered, setHovered] = useState(false);
+  const strokeWidth = 1.5;
+  const padding = strokeWidth / 2;
+
+  switchColors = switchColors && hovered;
+
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`${-padding} ${-padding} ${50 + strokeWidth} ${
+        50 + strokeWidth
+      }`}
+      fill={bgColorHex}
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("transition-all hover:scale-105", className)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <circle
+        cx="25"
+        cy="25"
+        r="25"
+        fill={switchColors ? "currentColor" : "inherit"}
+      />
+      <path
+        d="M0 50L3.51458 37.1604C1.34583 33.4021 0.20625 29.1417 0.208333 24.7729C0.214583 11.1146 11.3292 0 24.9854 0C31.6125 0.00208333 37.8333 2.58333 42.5125 7.26667C47.1896 11.95 49.7646 18.175 49.7625 24.7958C49.7563 38.4562 38.6417 49.5708 24.9854 49.5708C20.8396 49.5687 16.7542 48.5292 13.1354 46.5542L0 50ZM13.7438 42.0687C17.2354 44.1417 20.5688 45.3833 24.9771 45.3854C36.3271 45.3854 45.5729 36.1479 45.5792 24.7917C45.5833 13.4125 36.3813 4.1875 24.9938 4.18333C13.6354 4.18333 4.39583 13.4208 4.39167 24.775C4.38958 29.4104 5.74792 32.8812 8.02917 36.5125L5.94792 44.1125L13.7438 42.0687ZM37.4667 30.6854C37.3125 30.4271 36.9 30.2729 36.2792 29.9625C35.6604 29.6521 32.6167 28.1542 32.0479 27.9479C31.4813 27.7417 31.0688 27.6375 30.6542 28.2583C30.2417 28.8771 29.0542 30.2729 28.6938 30.6854C28.3333 31.0979 27.9708 31.15 27.3521 30.8396C26.7333 30.5292 24.7375 29.8771 22.3729 27.7667C20.5333 26.125 19.2896 24.0979 18.9292 23.4771C18.5688 22.8583 18.8917 22.5229 19.2 22.2146C19.4792 21.9375 19.8188 21.4917 20.1292 21.1292C20.4438 20.7708 20.5458 20.5125 20.7542 20.0979C20.9604 19.6854 20.8583 19.3229 20.7021 19.0125C20.5458 18.7042 19.3083 15.6562 18.7938 14.4167C18.2896 13.2104 17.7792 13.3729 17.4 13.3542L16.2125 13.3333C15.8 13.3333 15.1292 13.4875 14.5625 14.1083C13.9958 14.7292 12.3958 16.225 12.3958 19.2729C12.3958 22.3208 14.6146 25.2646 14.9229 25.6771C15.2333 26.0896 19.2875 32.3438 25.4979 35.025C26.975 35.6625 28.1292 36.0437 29.0271 36.3292C30.5104 36.8 31.8604 36.7333 32.9271 36.575C34.1167 36.3979 36.5896 35.0771 37.1063 33.6312C37.6229 32.1833 37.6229 30.9437 37.4667 30.6854Z"
+        fill={switchColors ? "inherit" : "currentColor"}
+        stroke={switchColors ? "currentColor" : "inherit"} // outline color
+        strokeWidth="1.5" // outline thickness
+        strokeLinejoin="round" // optional: controls how corners look
+        strokeLinecap="round" //
+      />
+    </svg>
+  );
+};
+
+export default WhatsAppLogo;

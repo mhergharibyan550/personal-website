@@ -4,7 +4,7 @@ import { projectDetails } from "./projectsList";
 
 const LastProjects = () => {
   return (
-    <>
+    <section>
       <h2
         id="lastprojects"
         className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
@@ -18,7 +18,7 @@ const LastProjects = () => {
           ))}
         </MaxWidthWrapper>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience/Experience";
+import Footer from "@/components/Footer";
 import LastProjects from "@/components/LastProjects/LastProjects";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Skills from "@/components/Skills/Skills";
@@ -26,6 +27,7 @@ export default function Home() {
           </Button>
         </MaxWidthWrapper>
       </div>
+      <Footer />
     </>
   );
 }

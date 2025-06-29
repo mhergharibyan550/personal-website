@@ -11,6 +11,7 @@ const AboutMe = () => {
         alt="Personal photo"
         height={180}
         width={180}
+        priority
         className="rounded-full border-[3px] border-custom-blue"
       />
       <section className="flex flex-col justify-center items-center tracking-widest py-6 max-w-[600px]">
@@ -29,9 +30,10 @@ const AboutMe = () => {
         <div className="flex flex-col justify-between items-center">
           <p className="mt-4 text-center leading-relaxed">17 years old</p>
           <p>
-            <span className="font-semibold text-custom-blue">5+</span> projects,
-            <span className="font-semibold text-custom-blue"> 3+</span>{" "}
-            companies
+            Worked on
+            <span className="font-semibold text-custom-blue"> 5+</span> projects
+            and at
+            <span className="font-semibold text-custom-blue"> 3</span> companies
           </p>
         </div>
 
@@ -52,7 +54,7 @@ const AboutMe = () => {
             <LinkedInLogo width={40} height={40} />
           </a>
           <a
-            href="https://t.me/MherGharibyan"
+            href="https://t.me/mhergharibyan550"
             target="_blank"
             rel="noopener noreferrer"
             title="Telegram"
@@ -65,7 +67,13 @@ const AboutMe = () => {
             rel="noopener noreferrer"
             title="WhatsApp"
           >
-            <WhatsAppLogo width={40} height={40} />
+            <WhatsAppLogo
+              className="text-custom-blue hover:text-gray-700"
+              bgColorHex="white"
+              switchColors={false}
+              width={40}
+              height={40}
+            />
           </a>
         </div>
       </section>
