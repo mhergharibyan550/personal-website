@@ -20,7 +20,7 @@ const AboutMe = () => {
             Greetings! 👋
           </h1>
           <h2 className="text-3xl font-bold text-gray-800 my-1 text-shadow-title">
-            I'm Mher Gharibyan
+            I&apos;m Mher Gharibyan
           </h2>
           <h3 className="text-xl font-semibold text-custom-green text-shadow-title">
             Full Stack Developer
