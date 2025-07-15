@@ -15,7 +15,7 @@ import expressjsIcon from "../../assets/skill_logos/backend/expressjs.svg";
 import mysqlIcon from "../../assets/skill_logos/backend/mysql.svg";
 import mongodbIcon from "../../assets/skill_logos/backend/mongodb.svg";
 
-export const frontendSkills: Array<Omit<SkillProps, "className">> = [
+export const frontendSkills: Array<Pick<SkillProps, "src" | "skillName">> = [
   {
     src: htmlIcon,
     skillName: "HTML",
@@ -50,7 +50,7 @@ export const frontendSkills: Array<Omit<SkillProps, "className">> = [
   },
 ];
 
-export const backendSkills: Array<Omit<SkillProps, "className">> = [
+export const backendSkills: Array<Pick<SkillProps, "src" | "skillName">> = [
   {
     src: nodejsIcon,
     skillName: "NodeJS",

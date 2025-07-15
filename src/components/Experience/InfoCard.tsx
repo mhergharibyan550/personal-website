@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { LinkIcon } from "../ui/icons";
 import { useInView } from "@/hooks/useInView";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../utils";
 
 export type InfoCardProps = {
   src: string | StaticImageData;

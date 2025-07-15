@@ -1,7 +1,9 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Button } from "./ui/Button";
+import { Button } from "./ui/button";
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons.jsx";
+import { ContactMeButton } from "./ContactModal";
+import GitHubLogo from "./ui/icons/GitHubLogo";
 
 const AboutMe = () => {
   return (
@@ -19,7 +21,7 @@ const AboutMe = () => {
           <h1 className="text-custom-green font-bold text-shadow-title">
             Greetings! 👋
           </h1>
-          <h2 className="text-3xl font-bold text-gray-800 my-1 text-shadow-title">
+          <h2 className="text-3xl text-center font-bold text-gray-800 my-1 text-shadow-title">
             I&apos;m Mher Gharibyan
           </h2>
           <h3 className="text-xl font-semibold text-custom-green text-shadow-title">
@@ -29,7 +31,7 @@ const AboutMe = () => {
 
         <div className="flex flex-col justify-between items-center">
           <p className="mt-4 text-center leading-relaxed">17 years old</p>
-          <p>
+          <p className="text-center">
             Worked on
             <span className="font-semibold text-custom-blue"> 5+</span> projects
             and at
@@ -41,7 +43,7 @@ const AboutMe = () => {
           <Button variant="outline" className="px-6 py-5">
             Download CV
           </Button>
-          <Button className="px-6 py-5">Contact Me</Button>
+          <ContactMeButton className="px-6 py-5">Contact Me</ContactMeButton>
         </div>
 
         <div className="flex justify-between items-center w-fit gap-x-8">
@@ -74,6 +76,14 @@ const AboutMe = () => {
               width={40}
               height={40}
             />
+          </a>
+          <a
+            href="https://github.com/mhergharibyan550/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
+            <GitHubLogo width={40} height={40} />
           </a>
         </div>
       </section>

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Button, buttonVariants } from "./ui/Button";
-import { cn } from "../../lib/utils";
+import { cn } from "../utils";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { buttonVariants } from "./ui/button";
+import { ContactMeButton } from "./ContactModal";
 
 const linkClassnames = buttonVariants({ variant: "link" });
 
@@ -29,9 +30,9 @@ const Header = () => {
             Last Projects
           </Link>
         </nav>
-        <Button className="bg-white text-custom-blue hover:text-white">
+        <ContactMeButton className="bg-white text-custom-blue hover:text-white">
           Contact Me
-        </Button>{" "}
+        </ContactMeButton>{" "}
       </MaxWidthWrapper>
     </header>
   );
