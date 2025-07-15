@@ -1,11 +1,10 @@
+import Header from "@/components/Header";
+import "./globals.css";
+
+import ContactModal from "@/components/ContactModal";
+import { ModalProvider } from "@/context/ModalContext";
 import type { Metadata } from "next";
 import { Rampart_One, Recursive } from "next/font/google";
-
-import Header from "../components/Header";
-
-import "./globals.css";
-import { ModalProvider } from "@/context/ModalContext";
-import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
   title: "Mher Gharibyan - Personal Website",

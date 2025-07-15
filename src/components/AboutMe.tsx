@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Button } from "./ui/button";
+import { Button } from "./ui/Button";
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons.jsx";
 import { ContactMeButton } from "./ContactModal";
 import GitHubLogo from "./ui/icons/GitHubLogo";

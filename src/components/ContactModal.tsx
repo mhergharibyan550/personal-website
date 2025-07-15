@@ -3,7 +3,7 @@
 import { useModal } from "@/context/ModalContext";
 import { X } from "lucide-react";
 import { useState } from "react";
-import { Button, ButtonProps } from "./ui/button";
+import { Button, ButtonProps } from "./ui/Button";
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons";
 import GitHubLogo from "./ui/icons/GitHubLogo";
 import Modal from "./ui/Modal";
@@ -16,10 +16,16 @@ export const ContactMeButton = ({
   className,
   value = "Contact Me",
 }: ContactMeButtonProps) => {
-  const { openModal } = useModal();
+  const { openModal, isOpen } = useModal();
 
   return (
-    <Button className={className} onClick={openModal}>
+    <Button
+      aria-label="toggle contact modal"
+      aria-haspopup="dialog"
+      aria-controls="contact-modal"
+      className={className}
+      onClick={openModal}
+    >
       {value}
     </Button>
   );
@@ -56,6 +62,7 @@ const ContactModal = () => {
 
   return (
     <Modal
+      id="contact-modal"
       onClose={handleModalClose}
       isOpen={isOpen}
       className="animate-fadeIn"
