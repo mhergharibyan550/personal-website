@@ -1,9 +1,10 @@
+import Header from "@/components/Header";
+import "./globals.css";
+
+import ContactModal from "@/components/ContactModal";
+import { ModalProvider } from "@/context/ModalContext";
 import type { Metadata } from "next";
 import { Rampart_One, Recursive } from "next/font/google";
-
-import Header from "../components/Header";
-
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Mher Gharibyan - Personal Website",
@@ -32,8 +33,11 @@ export default function RootLayout({
       <body
         className={`${rampartOneFont.variable} ${recursiveFont.variable} font-recursive`}
       >
-        <Header />
-        {children}
+        <ModalProvider>
+          <Header />
+          {children}
+          <ContactModal />
+        </ModalProvider>
       </body>
     </html>
   );

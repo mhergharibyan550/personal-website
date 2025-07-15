@@ -5,7 +5,7 @@ import laptopScreen from "@/assets/laptop_frame/laptop-screen.svg";
 import { useInView } from "@/hooks/useInView";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../utils";
 import { Button, buttonVariants } from "../ui/Button";
 import { LinkIcon } from "../ui/icons";
 
