@@ -6,7 +6,7 @@ import { useInView } from "@/hooks/useInView";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { cn } from "../../utils";
-import { Button, buttonVariants } from "../ui/button";
+import { Button, buttonVariants } from "../ui/Button";
 import { LinkIcon } from "../ui/icons";
 
 export type ProjectItemProps = {
