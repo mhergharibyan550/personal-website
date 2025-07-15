@@ -1,6 +1,7 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
+import { HTMLAttributes, ReactNode, useEffect } from "react";
 
 interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -39,7 +40,12 @@ const Modal = ({ children, className, onClose, isOpen }: ModalProps) => {
         aria-hidden="true"
         onClick={onClose}
       />
-      <div className="fixed z-[1000] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div
+        className={cn(
+          "fixed z-[1000] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+          className
+        )}
+      >
         {children}
       </div>
     </>

@@ -22,17 +22,6 @@ const navItems = [
 const Header = () => {
   const navRef = useRef<HTMLUListElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [inert, setInert] = useState(false);
-
-  useEffect(() => {
-    if (navRef.current) {
-      if (inert) {
-        navRef.current.setAttribute("inert", "");
-      } else {
-        navRef.current.removeAttribute("inert");
-      }
-    }
-  }, [inert]);
 
   useEffect(() => {
     const closeOnEsc = (e: KeyboardEvent) =>
@@ -48,7 +37,7 @@ const Header = () => {
 
     const updateNavbarInert = () => {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      console.log(isMobile);
+
       if (navRef.current) {
         navRef.current.inert = isOpen && isMobile;
       }

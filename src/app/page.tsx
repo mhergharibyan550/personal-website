@@ -1,5 +1,5 @@
 import AboutMe from "@/components/AboutMe";
-import ContactModal, { ContactMeButton } from "@/components/ContactModal";
+import { ContactMeButton } from "@/components/ContactModal";
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer";
 import LastProjects from "@/components/LastProjects/LastProjects";

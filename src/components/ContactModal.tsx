@@ -16,7 +16,7 @@ export const ContactMeButton = ({
   className,
   value = "Contact Me",
 }: ContactMeButtonProps) => {
-  const { openModal, isOpen } = useModal();
+  const { openModal } = useModal();
 
   return (
     <Button
