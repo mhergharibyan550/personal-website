@@ -34,7 +34,7 @@ const Navbar = ({
     document.body.addEventListener("keydown", closeOnEsc);
 
     return () => document.body.removeEventListener("keydown", closeOnEsc);
-  }, []);
+  }, [toggle]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;

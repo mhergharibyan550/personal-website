@@ -1,23 +1,20 @@
 // Frontend Skills' Icons
-import htmlIcon from "../../assets/skill_logos/frontend/html.svg";
 import cssIcon from "../../assets/skill_logos/frontend/css.svg";
+import htmlIcon from "../../assets/skill_logos/frontend/html.svg";
 import javascriptIcon from "../../assets/skill_logos/frontend/javascript.svg";
-import typescriptIcon from "../../assets/skill_logos/frontend/typescript.svg";
-import reactIcon from "../../assets/skill_logos/frontend/react.svg";
 import nextIcon from "../../assets/skill_logos/frontend/nextjs.svg";
-import bootstrapIcon from "../../assets/skill_logos/frontend/bootstrap.svg";
+import reactIcon from "../../assets/skill_logos/frontend/react.svg";
 import tailwindcssIcon from "../../assets/skill_logos/frontend/tailwindcss.svg";
+import typescriptIcon from "../../assets/skill_logos/frontend/typescript.svg";
 
 // Backend Skills' Icons
-import nodejsIcon from "../../assets/skill_logos/backend/nodejs.svg";
-import expressjsIcon from "../../assets/skill_logos/backend/expressjs.svg";
-import mysqlIcon from "../../assets/skill_logos/backend/mysql.svg";
 import mongodbIcon from "../../assets/skill_logos/backend/mongodb.svg";
+import nodejsIcon from "../../assets/skill_logos/backend/nodejs.svg";
 
-import { ProjectItemProps } from "./ProjectItem";
 import casecobraImage from "@/assets/project_images/casecobra.png";
-import loopysanchezImage from "@/assets/project_images/loopy-sanchez.png";
 import chatappImage from "@/assets/project_images/chatapp.png";
+import loopysanchezImage from "@/assets/project_images/loopy-sanchez.png";
+import { ProjectItemProps } from "./ProjectItem";
 
 export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
   {
@@ -35,6 +32,7 @@ export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
       tailwindcssIcon,
       javascriptIcon,
       cssIcon,
+      htmlIcon,
     ],
   },
   {
@@ -52,6 +50,7 @@ export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
       tailwindcssIcon,
       javascriptIcon,
       cssIcon,
+      htmlIcon,
     ],
   },
   {
@@ -65,10 +64,10 @@ export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
     usedTech: [
       reactIcon,
       typescriptIcon,
-      javascriptIcon,
-      cssIcon,
       nodejsIcon,
       mongodbIcon,
+      javascriptIcon,
+      cssIcon,
     ],
   },
 ];
