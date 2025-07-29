@@ -9,14 +9,14 @@ const MaxWidthWrapper = ({
   className?: string;
 }) => {
   return (
-    <section
+    <div
       className={cn(
         "h-full mx-auto w-full max-w-screen-xl px-2.5 md:px-8",
         className
       )}
     >
       {children}
-    </section>
+    </div>
   );
 };
 

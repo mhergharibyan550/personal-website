@@ -4,11 +4,8 @@ import { backendSkills, frontendSkills } from "./skillsList";
 
 const Skills = () => {
   return (
-    <section>
-      <h2
-        id="skills"
-        className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
-      >
+    <section id="skills" className="scroll-mt-24">
+      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title text-center">
         SKILLS
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">

@@ -1,4 +1,5 @@
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons";
+import GitHubLogo from "./ui/icons/GitHubLogo";
 
 const Footer = () => {
   return (
@@ -37,6 +38,18 @@ const Footer = () => {
           <WhatsAppLogo
             className="text-white"
             bgColorHex="#287c6c"
+            width={40}
+            height={40}
+          />
+        </a>
+        <a
+          href="https://github.com/mhergharibyan550/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <GitHubLogo
+            className="text-white border border-custom-green rounded-full hover:border-white hover:bg-white hover:text-custom-green"
             width={40}
             height={40}
           />
