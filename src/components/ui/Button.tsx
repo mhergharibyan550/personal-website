@@ -7,14 +7,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-custom-blue text-white hover:bg-slate-700",
+        default:
+          "bg-custom-blue text-white hover:bg-slate-700 disabled:bg-gray-500",
         outline:
           "bg-transparent border border-custom-blue color-custom-blue hover:bg-slate-100",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         link: "bg-transparent text-white underline-offset-4 hover:underline hover:translate-y-[-4px] active:text-slate-300",
 
-        // Variants below are not in use.  Reserved for to future.
+        // Variants below are not in use. Reserved for to future.
         subtle: "bg-slate-100 text-slate-900 hover:bg-slate-200 ",
         ghost:
           "bg-transparent dark:bg-transparent hover:bg-slate-100 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",

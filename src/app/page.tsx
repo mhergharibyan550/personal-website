@@ -1,7 +1,6 @@
 import AboutMe from "@/components/AboutMe";
 import { ContactMeButton } from "@/components/ContactModal";
 import Experience from "@/components/Experience/Experience";
-import Footer from "@/components/Footer";
 import LastProjects from "@/components/LastProjects/LastProjects";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Skills from "@/components/Skills/Skills";
@@ -22,15 +21,10 @@ export default function Home() {
           Let’s turn your concepts into reality!
         </h2>
 
-        <ContactMeButton
-          className="w-56 md:w-64 md:text-lg bg-custom-green"
-          size="lg"
-        >
+        <ContactMeButton className="w-56 md:w-64 bg-custom-green" size="lg">
           Contact Me!
         </ContactMeButton>
       </MaxWidthWrapper>
-
-      <Footer />
     </>
   );
 }

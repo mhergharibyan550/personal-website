@@ -3,11 +3,11 @@
 import laptopBody from "@/assets/laptop_frame/laptop-body.svg";
 import laptopScreen from "@/assets/laptop_frame/laptop-screen.svg";
 import { useInView } from "@/hooks/useInView";
+import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { cn } from "../../utils";
 import { Button, buttonVariants } from "../ui/Button";
-import { LinkIcon } from "../ui/icons";
 
 export type ProjectItemProps = {
   className?: string;
@@ -16,6 +16,8 @@ export type ProjectItemProps = {
   description: string;
   brandColorHex: string;
   link: string;
+  githubLink?: string;
+  usedTech: string[] | StaticImageData[];
 };
 
 const ProjectItem = ({
@@ -25,6 +27,8 @@ const ProjectItem = ({
   description,
   brandColorHex,
   link,
+  githubLink,
+  usedTech,
 }: ProjectItemProps) => {
   const { ref, isInView } = useInView<HTMLDivElement>();
 
@@ -39,7 +43,7 @@ const ProjectItem = ({
         )}
         ref={ref}
       >
-        <div className="w-full">
+        <div className="w-full px-8 md:px-20 lg:px-0">
           <div className="relative mx-7 lg:mx-8">
             <div className="absolute inset-0 px-4 pt-2 pb-6 md:pt-3 md:pb-9 lg:pt-2 lg:pb-6">
               <Image
@@ -59,7 +63,7 @@ const ProjectItem = ({
           <Image className="w-full" src={laptopBody} alt="laptop frame body" />
         </div>
 
-        <div className="flex flex-col items-center w-full gap-y-7 lg:justify-between lg:py-2 px-8">
+        <div className="flex flex-col items-center w-full gap-y-7 lg:justify-between lg:py-2 md:px-8">
           <div className="flex flex-col items-center lg:items-start px-12 lg:px-0 w-full">
             <h2
               style={{ color: brandColorHex }}
@@ -73,19 +77,50 @@ const ProjectItem = ({
                 title
               )}
             </h2>
-            <p className="text-gray-500 text-start w-full mt-3">
+            <p className="text-gray-500 w-full text-justify mt-3">
               {description}
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-y-3 lg:mb-5 lg:gap-x-6 items-center w-1/2 lg:w-full">
+          <ul className="flex flex-wrap justify-center w-full gap-5">
+            {usedTech.map((t) => (
+              <li
+                key={Math.random()}
+                className="ease-in duration-200 hover:scale-110"
+              >
+                {
+                  <Image
+                    className="h-10 w-10 cursor-pointer"
+                    src={t}
+                    alt="Tech"
+                  />
+                }
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col lg:flex-row gap-y-3 lg:gap-x-6 items-center w-1/2 lg:w-full">
             <Link
               href={link}
               className={cn(buttonVariants({}), "bg-custom-green w-full")}
             >
-              Visit <LinkIcon width={25} height={25} />
+              Visit
+              <ExternalLink className="ml-1" size={15} />
             </Link>
-            <Button className="bg-custom-green w-full">Learn More</Button>
+            {githubLink ? (
+              <Link
+                href={githubLink}
+                className={cn(buttonVariants({}), "bg-custom-green w-full")}
+              >
+                GitHub
+                <ExternalLink className="ml-1" size={15} />
+              </Link>
+            ) : (
+              <Button disabled className="bg-custom-green w-full">
+                GitHub&nbsp;(N/A)
+                <ExternalLink className="ml-1" size={15} />
+              </Button>
+            )}
           </div>
         </div>
       </div>

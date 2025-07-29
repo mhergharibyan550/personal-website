@@ -14,7 +14,7 @@ interface ContactMeButtonProps extends ButtonProps {
 
 export const ContactMeButton = ({
   className,
-  value = "Contact Me",
+  children,
 }: ContactMeButtonProps) => {
   const { openModal } = useModal();
 
@@ -26,7 +26,7 @@ export const ContactMeButton = ({
       className={className}
       onClick={openModal}
     >
-      {value}
+      {children}
     </Button>
   );
 };

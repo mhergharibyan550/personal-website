@@ -5,6 +5,7 @@ import ContactModal from "@/components/ContactModal";
 import { ModalProvider } from "@/context/ModalContext";
 import type { Metadata } from "next";
 import { Rampart_One, Recursive } from "next/font/google";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Mher Gharibyan - Personal Website",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Header />
           {children}
           <ContactModal />
+          <Footer />
         </ModalProvider>
       </body>
     </html>

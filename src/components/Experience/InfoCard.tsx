@@ -1,9 +1,9 @@
 "use client";
 
+import { useInView } from "@/hooks/useInView";
+import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { LinkIcon } from "../ui/icons";
-import { useInView } from "@/hooks/useInView";
 import { cn } from "../../utils";
 
 export type InfoCardProps = {
@@ -46,15 +46,14 @@ const InfoCard = ({
         )}
       >
         <div
-          className={`flex flex-col md:flex-row items-center ${
+          className={`flex flex-col md:h-20 md:flex-row items-center ${
             position == "right" && "md:flex-row-reverse"
           }`}
         >
           <Image
-            className="transition-transform hover:scale-105 ease-in-out duration-150 object-contain"
+            className="transition-transform h-20 md:h-full w-auto hover:scale-105 ease-in-out duration-150 object-contain"
             src={src}
-            height={65}
-            alt="Solicy Logo"
+            alt={`${companyName} Logo`}
           />
 
           <div
@@ -69,7 +68,7 @@ const InfoCard = ({
               className="flex text-gray-700 font-bold text-xl tracking-wider mt-3 md:mt-0 hover:scale-105 ease-in-out duration-150"
             >
               {companyName}
-              <LinkIcon height={15} width={15} />
+              <ExternalLink size={15} />
             </Link>
             <h4
               style={{ color: brandColorHex }}
@@ -89,7 +88,7 @@ const InfoCard = ({
               className="text-black-700 leading-relaxed tracking-wider text-sm md:text-base"
               key={i}
             >
-              <span className="text-custom-green">◈ </span>
+              {/* <span className="text-custom-green">◈ </span> */}
               {desc}
             </li>
           ))}
