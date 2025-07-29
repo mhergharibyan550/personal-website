@@ -4,11 +4,8 @@ import { projectDetails } from "./projectsList";
 
 const LastProjects = () => {
   return (
-    <section>
-      <h2
-        id="lastprojects"
-        className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
-      >
+    <section id="lastprojects" className="scroll-mt-24">
+      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title text-center">
         LAST PROJECTS
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">

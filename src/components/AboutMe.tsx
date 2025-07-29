@@ -4,19 +4,24 @@ import { Button } from "./ui/Button";
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons.jsx";
 import { ContactMeButton } from "./ContactModal";
 import GitHubLogo from "./ui/icons/GitHubLogo";
+import { Contact, Download } from "lucide-react";
+import Link from "next/link";
 
 const AboutMe = () => {
   return (
     <MaxWidthWrapper className="flex flex-col items-center justify-center mt-28 animate-fadeIn">
-      <Image
-        src="/Personal_Photo.png"
-        alt="Personal photo"
-        height={180}
-        width={180}
-        priority
-        className="rounded-full border-[3px] border-custom-blue"
-      />
-      <section className="flex flex-col justify-center items-center tracking-widest py-6 max-w-[600px]">
+      <section
+        id="about"
+        className="flex flex-col justify-center items-center tracking-widest max-w-[600px] scroll-mt-[100rem]"
+      >
+        <Image
+          src="/Personal_Photo.jpg"
+          alt="Personal photo"
+          height={200}
+          width={200}
+          priority
+          className="rounded-full mb-6 border-[3px] border-custom-blue"
+        />
         <div className="flex flex-col items-center">
           <h1 className="text-custom-green font-bold text-shadow-title">
             Greetings! 👋
@@ -29,9 +34,9 @@ const AboutMe = () => {
           </h3>
         </div>
 
-        <div className="flex flex-col justify-between items-center">
-          <p className="mt-4 text-center leading-relaxed">17 years old</p>
-          <p className="text-center">
+        <div className="flex flex-col justify-between items-center text-center leading-relaxed">
+          <p className="mt-4">17 years old</p>
+          <p>
             Worked on
             <span className="font-semibold text-custom-blue"> 5+</span> projects
             and at
@@ -40,10 +45,20 @@ const AboutMe = () => {
         </div>
 
         <div className="flex flex-col gap-y-4 md:flex-row md:gap-x-8 my-4">
-          <Button variant="outline" className="px-6 py-5">
-            Download CV
-          </Button>
-          <ContactMeButton className="px-6 py-5">Contact Me</ContactMeButton>
+          <Link
+            href="https://drive.google.com/uc?export=download&id=1J6_CpEap-fG58QTG4oLYfoGW8dR8C3ir"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" className="px-6 py-5">
+              <Download className="mr-2" size={15} />
+              Download CV
+            </Button>
+          </Link>
+          <ContactMeButton className="px-6 py-5">
+            <Contact className="mr-2" size={15} />
+            Contact Me
+          </ContactMeButton>
         </div>
 
         <div className="flex justify-between items-center w-fit gap-x-8">
@@ -82,6 +97,7 @@ const AboutMe = () => {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
+            className=""
           >
             <GitHubLogo width={40} height={40} />
           </a>
