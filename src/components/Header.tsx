@@ -4,7 +4,7 @@ import "wicg-inert";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { ContactMeButton } from "./ContactModal";
+import { ContactMeButton } from "./ContactModal/ContactModal";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Navbar from "./Navbar";
 

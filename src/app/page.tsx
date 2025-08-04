@@ -1,5 +1,5 @@
 import AboutMe from "@/components/AboutMe";
-import { ContactMeButton } from "@/components/ContactModal";
+import { ContactMeButton } from "@/components/ContactModal/ContactModal";
 import Experience from "@/components/Experience/Experience";
 import LastProjects from "@/components/LastProjects/LastProjects";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";

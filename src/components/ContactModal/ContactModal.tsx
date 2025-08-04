@@ -2,11 +2,11 @@
 
 import { useModal } from "@/context/ModalContext";
 import { X } from "lucide-react";
-import { useState } from "react";
-import { Button, ButtonProps } from "./ui/Button";
-import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons";
-import GitHubLogo from "./ui/icons/GitHubLogo";
-import Modal from "./ui/Modal";
+import { Button, ButtonProps } from "../ui/Button";
+import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "../ui/icons";
+import GitHubLogo from "../ui/icons/GitHubLogo";
+import Modal from "../ui/Modal";
+import ContactForm from "./ContactForm";
 
 interface ContactMeButtonProps extends ButtonProps {
   value?: string;
@@ -34,27 +34,13 @@ export const ContactMeButton = ({
 const ContactModal = () => {
   const { closeModal, isOpen } = useModal();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
   const handleModalClose = () => {
-    const hasInput =
-      name.trim() !== "" || email.trim() !== "" || message.trim() !== "";
-
-    if (!hasInput) {
-      closeModal();
-      return;
-    }
-
     const confirmation = confirm(
       "Are you sure you want to discard your message?"
     );
+
     if (confirmation) {
       closeModal();
-      setName("");
-      setEmail("");
-      setMessage("");
     }
   };
 
@@ -116,7 +102,7 @@ const ContactModal = () => {
               title="WhatsApp"
             >
               <WhatsAppLogo
-                className="text-custom-green hover:text-gray-700"
+                className="text-custom-green"
                 bgColorHex="transparent"
                 switchColors={false}
                 width={40}
@@ -139,41 +125,7 @@ const ContactModal = () => {
         </div>
         <hr className="h-2 w-1/2 border-slate-300 border-t-2" />
 
-        <form className="flex flex-col w-full">
-          <label className="mt-4" htmlFor="name">
-            Your Name:{" "}
-          </label>
-          <input
-            maxLength={50}
-            className="mb-5 p-2 h-8 border border-gray-300 rounded-md"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <label htmlFor="email">Your Email: </label>
-          <input
-            className="mb-5 p-2 h-8 border border-gray-300 rounded-md"
-            id="email"
-            name="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <label htmlFor="textarea">Your Message:</label>
-          <textarea
-            className="mb-5 p-2 max-w-full text-wrap resize-y max-h-fit min-h-8 border border-gray-300 rounded-md"
-            id="textarea"
-            name="textarea"
-            rows={5}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-
-          <Button className="bg-custom-green self-center w-full">Send</Button>
-        </form>
+        <ContactForm />
       </div>
     </Modal>
   );

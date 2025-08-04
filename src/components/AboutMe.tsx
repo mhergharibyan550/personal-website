@@ -2,7 +2,7 @@ import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Button } from "./ui/Button";
 import { LinkedInLogo, TelegramLogo, WhatsAppLogo } from "./ui/icons.jsx";
-import { ContactMeButton } from "./ContactModal";
+import { ContactMeButton } from "./ContactModal/ContactModal";
 import GitHubLogo from "./ui/icons/GitHubLogo";
 import { Contact, Download } from "lucide-react";
 import Link from "next/link";

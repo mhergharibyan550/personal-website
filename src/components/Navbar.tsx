@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/utils";
+import cn from "@/utils/cn";
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef } from "react";
 import { buttonVariants } from "./ui/Button";
 import { useActiveSection } from "@/hooks/useActiveSection";

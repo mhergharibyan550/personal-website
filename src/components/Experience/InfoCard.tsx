@@ -4,7 +4,7 @@ import { useInView } from "@/hooks/useInView";
 import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { cn } from "../../utils";
+import cn from "@/utils/cn";
 
 export type InfoCardProps = {
   src: string | StaticImageData;
