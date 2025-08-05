@@ -1,19 +1,19 @@
 // Frontend Skills' Icons
-import cssIcon from "../../assets/skill_logos/frontend/css.svg";
-import htmlIcon from "../../assets/skill_logos/frontend/html.svg";
-import javascriptIcon from "../../assets/skill_logos/frontend/javascript.svg";
-import nextIcon from "../../assets/skill_logos/frontend/nextjs.svg";
-import reactIcon from "../../assets/skill_logos/frontend/react.svg";
-import tailwindcssIcon from "../../assets/skill_logos/frontend/tailwindcss.svg";
-import typescriptIcon from "../../assets/skill_logos/frontend/typescript.svg";
+import htmlIcon from "@/assets/skill_logos/frontend/html.svg";
+import cssIcon from "@/assets/skill_logos/frontend/css.svg";
+import tailwindcssIcon from "@/assets/skill_logos/frontend/tailwindcss.svg";
+import javascriptIcon from "@/assets/skill_logos/frontend/javascript.svg";
+import typescriptIcon from "@/assets/skill_logos/frontend/typescript.svg";
+import reactIcon from "@/assets/skill_logos/frontend/react.svg";
+import nextIcon from "@/assets/skill_logos/frontend/nextjs.svg";
 
 // Backend Skills' Icons
-import mongodbIcon from "../../assets/skill_logos/backend/mongodb.svg";
-import nodejsIcon from "../../assets/skill_logos/backend/nodejs.svg";
+import mongodbIcon from "@/assets/skill_logos/backend/mongodb.svg";
+import nodejsIcon from "@/assets/skill_logos/backend/nodejs.svg";
+import expressjsIcon from "@/assets/skill_logos/backend/expressjs.svg";
 
 import casecobraImage from "@/assets/project_images/casecobra.png";
 import chatappImage from "@/assets/project_images/chatapp.png";
-import loopysanchezImage from "@/assets/project_images/loopy-sanchez.png";
 import { ProjectItemProps } from "./ProjectItem";
 
 export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
@@ -36,24 +36,6 @@ export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
     ],
   },
   {
-    projectImage: loopysanchezImage,
-    title: "Loopy Sanchez",
-    description:
-      "Loopy Sanchez is a legacy Los Angeles cannabis operator providing a flavor factory of legendary crafted premium strains, at a sub-premium price.",
-    brandColorHex: "#36BED2",
-    link: "https://loopysanchez.com/",
-    githubLink: "",
-    usedTech: [
-      reactIcon,
-      nextIcon,
-      typescriptIcon,
-      tailwindcssIcon,
-      javascriptIcon,
-      cssIcon,
-      htmlIcon,
-    ],
-  },
-  {
     projectImage: chatappImage,
     title: "ChatAPP",
     description:
@@ -65,9 +47,11 @@ export const projectDetails: Array<Omit<ProjectItemProps, "className">> = [
       reactIcon,
       typescriptIcon,
       nodejsIcon,
+      expressjsIcon,
       mongodbIcon,
       javascriptIcon,
       cssIcon,
+      htmlIcon,
     ],
   },
 ];

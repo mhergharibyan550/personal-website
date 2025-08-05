@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { cn } from "../../utils";
+import cn from "@/utils/cn";
 import { useInView } from "@/hooks/useInView";
 
 export type SkillProps = {
