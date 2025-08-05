@@ -23,9 +23,21 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/png",
+        },
+      ],
     },
-    icons,
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-icon.png",
+    },
     metadataBase: new URL("https://mhergharibyan.vercel.app/"),
   };
 }
