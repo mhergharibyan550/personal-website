@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Mher Gharibyan - Personal Website",
   description:
     "Personal website of Mher Gharibyan showcasing experience, skills, projects etc. ",
+  metadataBase: new URL("https://mhergharibyan.vercel.app"),
 };
 
 const rampartOneFont = Rampart_One({
