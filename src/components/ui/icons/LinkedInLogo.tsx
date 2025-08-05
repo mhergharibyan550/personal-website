@@ -17,7 +17,7 @@ const LinkedInLogo = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
-        "transition-all hover:scale-105 text-custom-blue hover:text-slate-700",
+        "transition-all hover:scale-105 hover:text-slate-700",
         className
       )}
     >

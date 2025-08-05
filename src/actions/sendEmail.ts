@@ -1,12 +1,18 @@
 "use server";
 
-import { contactFormSchema, FormState } from "@/types/contactFormTypes";
+import {
+  ContactFormData,
+  contactFormSchema,
+  ContactFormState,
+} from "@/types/contactFormTypes";
 import getErrorMessage from "@/utils/getErrorMessage";
 import { checkRateLimitByIp } from "@/utils/rateLimiter";
 
 const FORMSPREE_ID = process.env.FORMSPREE_ID;
 
-export const sendEmail = async (prevState: FormState, formData: unknown) => {
+export const sendEmail = async (
+  data: ContactFormData
+): Promise<ContactFormState> => {
   const rateLimitDetails = await checkRateLimitByIp();
   if (!rateLimitDetails.success) {
     return {
@@ -15,25 +21,10 @@ export const sendEmail = async (prevState: FormState, formData: unknown) => {
     };
   }
 
-  if (!(formData instanceof FormData)) {
-    return {
-      success: false,
-      serverMessage: "Invalid form data",
-    };
-  }
-
-  const data = {
-    name: formData.get("name") as string,
-    email: formData.get("email") as string,
-    subject: formData.get("subject") as string,
-    message: formData.get("message") as string,
-  };
-
   try {
     const validationResult = contactFormSchema.safeParse(data);
     if (!validationResult.success) {
       return {
-        data,
         success: false,
         zodErrors: validationResult.error.flatten().fieldErrors,
         serverMessage: "",
@@ -59,19 +50,12 @@ export const sendEmail = async (prevState: FormState, formData: unknown) => {
     if (!response.ok) {
       return {
         success: false,
-        data,
         serverMessage: "Error while sending your message. Please try later!",
       };
     }
 
     return {
       success: true,
-      data: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      },
       serverMessage: "Message successfully sent!",
     };
   } catch (error) {
@@ -79,7 +63,6 @@ export const sendEmail = async (prevState: FormState, formData: unknown) => {
     console.error(errorMessage);
     return {
       success: false,
-      data,
       serverMessage: "Something unexpected happened. Please try later!",
     };
   }

@@ -3,97 +3,118 @@
 import { sendEmail } from "@/actions/sendEmail";
 import { Button } from "@/components/ui/Button";
 import Spinner from "@/components/ui/Spinner";
-import { FormState } from "@/types/contactFormTypes";
-import { useActionState, useEffect } from "react";
+import {
+  ContactFormData,
+  contactFormSchema,
+  ContactFormState,
+} from "@/types/contactFormTypes";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { RefObject } from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
-const initialState: FormState = {
-  success: false,
-  data: {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  },
-  serverMessage: "",
-};
+const ContactForm = ({ ref }: { ref?: RefObject<HTMLFormElement | null> }) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    mode: "onChange",
+  });
 
-const ContactForm = () => {
-  const [formState, sendEmailAction, isPending] = useActionState(
-    sendEmail,
-    initialState
-  );
-
-  const { data, serverMessage, success, zodErrors } = formState;
-
-  const handleSubmit = (formData: FormData) => {
-    sendEmailAction(formData);
-  };
-
-  useEffect(() => {
+  const onSubmit = async (data: ContactFormData) => {
+    const { success, serverMessage, zodErrors }: ContactFormState =
+      await sendEmail(data);
     if (success) {
-      toast.success(serverMessage || "Message sent!");
+      toast.success(serverMessage || "Message sent successfully!");
+      reset();
       return;
     }
-    if (!zodErrors) {
-      toast.error(serverMessage || "Something went wrong.");
+    if (zodErrors) {
+      Object.entries(zodErrors).forEach(([field, errorMessages]) => {
+        const message = Array.isArray(errorMessages)
+          ? errorMessages[0]
+          : errorMessages;
+        setError(field as keyof ContactFormData, {
+          type: "server",
+          message,
+        });
+      });
+      return;
     }
-  }, [formState]);
+
+    toast.error(serverMessage || "Something went wrong");
+  };
 
   return (
-    <form action={handleSubmit} className="flex flex-col w-full gap-2">
-      <label className="mt-4" htmlFor="name">
-        Your Name:{" "}
-      </label>
-      <input
-        id="name"
-        name="name"
-        maxLength={20}
-        className="p-2 h-8 border border-gray-300 rounded-md"
-        defaultValue={data?.name || ""}
-      />
-      {zodErrors?.name && (
-        <p className="text-red-500 text-xs">{zodErrors?.name}</p>
-      )}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col flex-grow flex-shrink w-full px-5 overflow-hidden transition-all duration-300"
+      ref={ref}
+    >
+      <div className="overflow-y-auto flex flex-col gap-2 pr-1">
+        <label className="mt-4" htmlFor="name">
+          Your Name:
+        </label>
+        <input
+          id="name"
+          maxLength={20}
+          className="p-2 h-8 border border-gray-300 rounded-md"
+          aria-required
+          {...register("name")}
+        />
+        {errors?.name && (
+          <p className="text-red-500 text-xs">{errors.name?.message}</p>
+        )}
 
-      <label htmlFor="email">Your Email: </label>
-      <input
-        id="email"
-        name="email"
-        className="p-2 h-8 border border-gray-300 rounded-md"
-        type="email"
-        defaultValue={data?.email || ""}
-      />
-      {zodErrors?.email && (
-        <p className="text-red-500 text-xs">{zodErrors?.email}</p>
-      )}
+        <label htmlFor="email">Your Email: </label>
+        <input
+          id="email"
+          className="p-2 h-8 border border-gray-300 rounded-md"
+          aria-required
+          type="email"
+          {...register("email")}
+        />
+        {errors.email && (
+          <p className="text-red-500 text-xs">{errors.email.message}</p>
+        )}
 
-      <label htmlFor="subject">Message Subject: </label>
-      <input
-        id="subject"
-        name="subject"
-        className="p-2 h-8 border border-gray-300 rounded-md"
-        type="text"
-        defaultValue={data?.subject || ""}
-      />
-      {zodErrors?.subject && (
-        <p className="text-red-500 text-xs">{zodErrors?.subject}</p>
-      )}
+        <label htmlFor="subject">Message Subject: </label>
+        <input
+          id="subject"
+          className="p-2 h-8 border border-gray-300 rounded-md"
+          aria-required
+          type="text"
+          {...register("subject")}
+        />
+        {errors.subject && (
+          <p className="text-red-500 text-xs">{errors.subject.message}</p>
+        )}
 
-      <label htmlFor="message">Your Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        className="p-2 max-w-full text-wrap resize-y max-h-fit min-h-8 border border-gray-300 rounded-md"
-        rows={5}
-        defaultValue={data?.message || ""}
-      ></textarea>
-      {zodErrors?.message && (
-        <p className="text-red-500 text-xs">{zodErrors?.message}</p>
-      )}
+        <label htmlFor="message">Your Message:</label>
+        <textarea
+          id="message"
+          className="p-2 max-w-full text-wrap resize-y max-h-fit min-h-24 border border-gray-300 rounded-md"
+          aria-required
+          rows={5}
+          {...register("message")}
+        />
+        {errors.message && (
+          <p className="text-red-500 text-xs">{errors.message.message}</p>
+        )}
+      </div>
 
-      <Button type="submit" className="bg-custom-green self-center w-full">
-        {isPending ? <Spinner /> : "Send"}
+      <Button type="submit" className="bg-custom-green self-center w-full mt-4">
+        {isSubmitting ? <Spinner /> : "Send"}
       </Button>
     </form>
   );

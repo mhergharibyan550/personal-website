@@ -88,7 +88,7 @@ const InfoCard = ({
               className="text-black-700 leading-relaxed tracking-wider text-sm md:text-base"
               key={i}
             >
-              {/* <span className="text-custom-green">◈ </span> */}
+              <span className="text-custom-green">◈ </span>
               {desc}
             </li>
           ))}

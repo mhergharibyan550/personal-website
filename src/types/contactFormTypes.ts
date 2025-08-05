@@ -1,20 +1,16 @@
 import z from "zod";
 
-export type FormState = {
+export type ContactFormState = {
   success: boolean;
-  zodErrors?: FormValidationErrors;
-  data?: ContactFormFields;
+  zodErrors?: Record<string, Array<string>>;
   serverMessage: string;
 };
 
-export type FormValidationErrors = {
-  name?: string[];
-  email?: string[];
-  subject?: string[];
-  message?: string[];
+export type ContactFormValidationErrors = {
+  [K in keyof ContactFormData]?: { message: string };
 };
 
-export type ContactFormFields = z.infer<typeof contactFormSchema>;
+export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const contactFormSchema = z.object({
   name: z
@@ -27,6 +23,7 @@ export const contactFormSchema = z.object({
     .email("Invalid email address"),
   subject: z
     .string({ message: "Email must be string" })
+    .min(4, "Subject length must be at least 4 characters")
     .nonempty("Subject is required"),
   message: z
     .string({ message: "Email must be string" })
