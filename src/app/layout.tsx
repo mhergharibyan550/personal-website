@@ -7,20 +7,15 @@ import type { Metadata } from "next";
 import { Rampart_One, Recursive } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { constructMetadata } from "@/utils/constructMetadata";
 
-export const metadata: Metadata = {
-  title: "Mher Gharibyan - Personal Website",
-  description:
-    "Personal website of Mher Gharibyan showcasing experience, skills, projects etc. ",
-  metadataBase: new URL("https://mhergharibyan.vercel.app"),
-};
+export const metadata: Metadata = constructMetadata();
 
 const rampartOneFont = Rampart_One({
   subsets: ["latin"],
   variable: "--font-rampart-one",
   weight: ["400"],
 });
-
 const recursiveFont = Recursive({
   subsets: ["latin"],
   variable: "--font-recursive",
