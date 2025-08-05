@@ -1,5 +1,4 @@
 import digicaLogo from "@/assets/company_logos/digica-logo.png";
-import simpliLogo from "@/assets/company_logos/simpli-logo.jpg";
 import solicyLogo from "@/assets/company_logos/solicy-logo.svg";
 import ufreesoftLogo from "@/assets/company_logos/ufreesoft-logo.jpg";
 import { InfoCardProps } from "./InfoCard";
