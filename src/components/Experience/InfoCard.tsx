@@ -70,12 +70,12 @@ const InfoCard = ({
               {companyName}
               <ExternalLink size={15} />
             </Link>
-            <h4
+            <p
               style={{ color: brandColorHex }}
-              className="font-semibold text-lg tracking-wider hover:scale-105 ease-in-out duration-150"
+              className="font-semibold text-lg tracking-wider"
             >
               {role}
-            </h4>
+            </p>
             <p className="text-gray-600 font-medium tracking-wide">
               {duration}
             </p>
@@ -94,7 +94,6 @@ const InfoCard = ({
           ))}
         </ul>
       </div>
-      <hr className="h-2 m-6 w-1/3 border-slate-300 border-t-2 md:hidden" />
     </>
   );
 };

@@ -9,10 +9,18 @@ const LastProjects = () => {
         LAST PROJECTS
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">
-        <MaxWidthWrapper className="flex flex-col md:gap-y-10 items-center py-8">
-          {projectDetails.map((project) => (
-            <ProjectItem key={project.title} {...project} />
-          ))}
+        <MaxWidthWrapper>
+          <ul className="flex flex-col items-center md:gap-y-10 py-8">
+            {projectDetails.map((project) => (
+              <li
+                className="flex flex-col items-center w-full"
+                key={project.title}
+              >
+                <ProjectItem {...project} />
+                <hr className="h-[1px] m-6 w-1/3 border-slate-300 border-y md:hidden" />
+              </li>
+            ))}
+          </ul>
         </MaxWidthWrapper>
       </div>
     </section>
