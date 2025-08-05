@@ -1,6 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, RefObject } from "react";
-import { cn } from "../../utils";
+import cn from "@/utils/cn";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800 text-sm font-medium rounded-md transition-all active:outline-none disabled:pointer-events-none hover:scale-105",

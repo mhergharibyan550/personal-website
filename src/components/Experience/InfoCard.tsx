@@ -4,7 +4,7 @@ import { useInView } from "@/hooks/useInView";
 import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { cn } from "../../utils";
+import cn from "@/utils/cn";
 
 export type InfoCardProps = {
   src: string | StaticImageData;
@@ -88,7 +88,7 @@ const InfoCard = ({
               className="text-black-700 leading-relaxed tracking-wider text-sm md:text-base"
               key={i}
             >
-              {/* <span className="text-custom-green">◈ </span> */}
+              <span className="text-custom-green">◈ </span>
               {desc}
             </li>
           ))}

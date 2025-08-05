@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "../../../utils";
+import cn from "@/utils/cn";
 
 const WhatsAppLogo = ({
   className,
@@ -31,7 +31,10 @@ const WhatsAppLogo = ({
       }`}
       fill={bgColorHex}
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("transition-all hover:scale-105", className)}
+      className={cn(
+        "transition-all hover:scale-105 hover:text-slate-700",
+        className
+      )}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

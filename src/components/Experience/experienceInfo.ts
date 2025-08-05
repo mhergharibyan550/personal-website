@@ -49,17 +49,4 @@ export const experienceInfo: Array<
     ],
     link: "https://www.linkedin.com/company/digicallc/",
   },
-  {
-    src: simpliLogo,
-    companyName: "SIMPLI",
-    duration: "15.05.2024 - 14.07.2024 ( 2 months )",
-    role: "Freelancer",
-    brandColorHex: "#25BDAD",
-    descriptions: [
-      "Completing various orders including WEB projects",
-      "Communicating with clients from different countries",
-      "Keeping productive teamwork and providing regular updates",
-    ],
-    link: "https://www.linkedin.com/company/simpli-freelance-agency/",
-  },
 ];

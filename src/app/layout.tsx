@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import "./globals.css";
 
-import ContactModal from "@/components/ContactModal";
+import ContactModal from "@/components/ContactModal/ContactModal";
 import { ModalProvider } from "@/context/ModalContext";
 import type { Metadata } from "next";
 import { Rampart_One, Recursive } from "next/font/google";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Mher Gharibyan - Personal Website",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <ContactModal />
           <Footer />
         </ModalProvider>
+        <Toaster />
       </body>
     </html>
   );

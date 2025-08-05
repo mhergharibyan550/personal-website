@@ -36,7 +36,7 @@ const Footer = () => {
           title="WhatsApp"
         >
           <WhatsAppLogo
-            className="text-white"
+            className="text-white hover:text-white"
             bgColorHex="#287c6c"
             width={40}
             height={40}
