@@ -9,14 +9,18 @@ const Experience = () => {
         EXPERIENCE
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">
-        <MaxWidthWrapper className="flex flex-col items-center md:gap-y-10 py-8">
-          {experienceInfo.map((exp, i) => (
-            <InfoCard
-              {...exp}
-              key={exp.companyName}
-              position={i % 2 == 0 ? "left" : "right"}
-            />
-          ))}
+        <MaxWidthWrapper>
+          <ul className="flex flex-col w-full items-center md:gap-y-10 py-8">
+            {experienceInfo.map((exp, i) => (
+              <li
+                className="flex flex-col items-center w-full"
+                key={exp.companyName}
+              >
+                <InfoCard {...exp} position={i % 2 == 0 ? "left" : "right"} />
+                <hr className="h-[1px] m-6 w-1/3 border-slate-300 border-y md:hidden" />
+              </li>
+            ))}
+          </ul>
         </MaxWidthWrapper>
       </div>
     </section>
