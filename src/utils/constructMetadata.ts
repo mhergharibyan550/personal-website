@@ -1,15 +1,17 @@
 import { Metadata } from "next";
 
 export function constructMetadata({
-  title = "Mher Gharibyan - Personal Website",
-  description = "Personal website of Mher Gharibyan showcasing experience, skills, projects etc. ",
-  image = "/opengraph-image.png",
+  title = "Mher Gharibyan | Personal Website",
+  description = "Personal website of Mher Gharibyan showcasing experience, skills, projects etc.",
+  image = "/thumbnail.png",
   icons = "/favicon.ico",
+  appleIcon = "/apple-icon.png",
 }: {
   title?: string;
   description?: string;
   image?: string;
   icons?: string;
+  appleIcon?: string;
 } = {}): Metadata {
   return {
     title,
@@ -34,9 +36,9 @@ export function constructMetadata({
       ],
     },
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/apple-icon.png",
+      icon: icons,
+      shortcut: icons,
+      apple: appleIcon,
     },
     metadataBase: new URL("https://mhergharibyan.vercel.app/"),
   };
