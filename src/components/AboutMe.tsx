@@ -45,7 +45,7 @@ const AboutMe = () => {
 
         <div className="flex flex-col gap-y-4 md:flex-row md:gap-x-8 my-4">
           <Link
-            href="https://drive.google.com/uc?export=download&id=1J6_CpEap-fG58QTG4oLYfoGW8dR8C3ir"
+            href="https://drive.google.com/uc?export=download&id=1BkfQ6Zn038t4haFf6Z0ZCXCWmWlfxWBF"
             target="_blank"
             rel="noopener noreferrer"
           >
