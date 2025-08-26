@@ -9,6 +9,7 @@ import reactIcon from "@/assets/skill_logos/frontend/react.svg";
 import nextIcon from "@/assets/skill_logos/frontend/nextjs.svg";
 import bootstrapIcon from "@/assets/skill_logos/frontend/bootstrap.svg";
 import tailwindcssIcon from "@/assets/skill_logos/frontend/tailwindcss.svg";
+import reduxIcon from "@/assets/skill_logos/frontend/redux.svg";
 
 // Backend Skills' Icons
 import nodejsIcon from "@/assets/skill_logos/backend/nodejs.svg";
@@ -30,6 +31,7 @@ const skillsList: Array<Pick<SkillProps, "src" | "skillName">> = [
   { src: typescriptIcon, skillName: "TypeScript" },
   { src: reactIcon, skillName: "React" },
   { src: nextIcon, skillName: "NextJS" },
+  { src: reduxIcon, skillName: "Redux" },
   { src: tailwindcssIcon, skillName: "Tailwind CSS" },
   { src: bootstrapIcon, skillName: "Bootstrap" },
 
