@@ -1,6 +1,6 @@
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import SkillCell from "./SkillCell";
-import { backendSkills, frontendSkills } from "./skillsList";
+import skillsList from "./skillsList";
 
 const Skills = () => {
   return (
@@ -10,7 +10,7 @@ const Skills = () => {
       </h2>
       <div className="shadow-inner-wide w-full bg-gray-50">
         <MaxWidthWrapper className="flex flex-wrap gap-3 justify-center items-center py-8">
-          {[...frontendSkills, ...backendSkills].map((skill) => {
+          {skillsList.map((skill) => {
             return (
               <SkillCell
                 className="border border-custom-green min-w-fit w-40 ease-in duration-200 hover:scale-105 shadow-lg"
