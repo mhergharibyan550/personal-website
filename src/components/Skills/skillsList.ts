@@ -22,7 +22,7 @@ import gitIcon from "@/assets/skill_logos/git.svg";
 import githubIcon from "@/assets/skill_logos/github.svg";
 import webpackIcon from "@/assets/skill_logos/webpack.svg";
 
-export const skillsList: Array<Pick<SkillProps, "src" | "skillName">> = [
+export default const skillsList: Array<Pick<SkillProps, "src" | "skillName">> = [
   // Frontend
   { src: htmlIcon, skillName: "HTML" },
   { src: cssIcon, skillName: "CSS" },
