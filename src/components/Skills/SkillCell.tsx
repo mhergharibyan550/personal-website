@@ -17,6 +17,7 @@ const SkillCell = ({ className, src, skillName, link }: SkillProps) => {
   return (
     <Link
       href={link}
+      target="_blank"
       aria-label={skillName}
       className={cn(
         "flex items-center justify-center gap-1 bg-white border text-gray-800 rounded-md py-2 px-3",
