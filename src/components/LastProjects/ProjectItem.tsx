@@ -83,11 +83,8 @@ const ProjectItem = ({
 
         <ul className="flex flex-wrap justify-center w-full gap-5 p-1">
           {usedTech.map((t) => (
-            <li
-              key={Math.random()}
-              className="ease-in duration-200 hover:scale-110"
-            >
-              <Image className="h-10 w-10 cursor-pointer" src={t} alt="Tech" />
+            <li key={Math.random()}>
+              <Image className="h-10 w-10" src={t} alt="Tech" />
             </li>
           ))}
         </ul>

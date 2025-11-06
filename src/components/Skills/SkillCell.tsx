@@ -3,17 +3,21 @@
 import Image, { StaticImageData } from "next/image";
 import cn from "@/utils/cn";
 import { useInView } from "@/hooks/useInView";
+import Link from "next/link";
 
 export type SkillProps = {
   src: string | StaticImageData;
   skillName: string;
+  link: string;
   className?: string;
 };
 
-const SkillCell = ({ className, src, skillName = "Skill" }: SkillProps) => {
-  const { ref, isInView } = useInView<HTMLDivElement>();
+const SkillCell = ({ className, src, skillName, link }: SkillProps) => {
+  const { ref, isInView } = useInView<HTMLAnchorElement>();
   return (
-    <div
+    <Link
+      href={link}
+      aria-label={skillName}
       className={cn(
         "flex items-center justify-center gap-1 bg-white border text-gray-800 rounded-md py-2 px-3",
         `${isInView ? "animate-fadeIn" : "opacity-0"}`,
@@ -29,7 +33,7 @@ const SkillCell = ({ className, src, skillName = "Skill" }: SkillProps) => {
         alt="icon"
       />
       <p>{skillName}</p>
-    </div>
+    </Link>
   );
 };
 
