@@ -34,7 +34,7 @@ const AboutMe = () => {
         </div>
 
         <div className="flex flex-col justify-between items-center text-center leading-relaxed">
-          <p className="mt-4">17 years old</p>
+          <p className="mt-4">18 years old</p>
           <p>
             Worked on
             <span className="font-semibold text-custom-blue"> 5+</span> projects
