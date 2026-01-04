@@ -22,13 +22,13 @@ const AboutMe = () => {
           className="rounded-full mb-6 border-[3px] border-custom-blue"
         />
         <div className="flex flex-col items-center">
-          <h1 className="text-custom-green text-center font-bold text-shadow-title">
+          <h1 className="text-custom-green text-center font-bold">
             Greetings! 👋
           </h1>
-          <h2 className="text-3xl text-center font-bold text-gray-800 my-1 text-shadow-title">
+          <h2 className="text-3xl text-center font-bold text-gray-800 my-1">
             I&apos;m Mher Gharibyan
           </h2>
-          <h3 className="text-xl text-center font-semibold text-custom-green text-shadow-title">
+          <h3 className="text-xl text-center font-semibold text-custom-green">
             Full Stack Developer
           </h3>
         </div>
