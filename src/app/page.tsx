@@ -16,7 +16,7 @@ export default function Home() {
       <MaxWidthWrapper className="flex flex-col items-center">
         <h2
           id="lastprojects"
-          className="text-2xl md:text-3xl max-w-[30rem] md:max-w-[36rem] font-bold text-gray-800 mt-16 mb-10 tracking-widest text-shadow-title scroll-mt-24 text-center"
+          className="text-2xl md:text-3xl max-w-[30rem] md:max-w-[36rem] font-bold text-gray-800 mt-16 mb-10 tracking-widest scroll-mt-24 text-center"
         >
           Let’s turn your concepts into reality!
         </h2>
